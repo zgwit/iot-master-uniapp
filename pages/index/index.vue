@@ -1,12 +1,15 @@
 <template>
 	<view class="container">
 
-		<uni-grid :showBorder="false">
-			<uni-grid-item class="app" v-for="a in apps" @click="open(a)">				
-				<image :src="a.icon" mode="aspectFit"></image>				
-				<text>{{a.name}}</text>				
+		<uni-grid class="apps" :showBorder="false">
+			<uni-grid-item v-for="a in apps" @click="open(a)">
+				<view class="app">
+					<image :src="a.icon" mode="aspectFit"></image>				
+					<text>{{a.name}}</text>	
+				</view>			
 			</uni-grid-item>
 		</uni-grid>
+		
 	</view>
 </template>
 
@@ -82,15 +85,26 @@
 
 <style lang="scss" scoped>
 	.container {
+		
+		.apps {
+			margin: 30rpx 0;
+		}
+		
 		.app {
+			width: 90%;
+			height: 80%;
+			
 			display: flex;
 			flex-direction: column;
-			//justify-content: center;
-			//align-items: center;
-			text-align: center;
+			justify-content: center;
+			align-items: center;
+			//text-align: center;
+			
+			color: #1296db;
 			
 			image{
-				width: 60%;
+				width: 80%;
+				display: block;
 			}
 		}
 	}
