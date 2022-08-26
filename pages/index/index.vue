@@ -1,39 +1,97 @@
 <template>
 	<view class="container">
-		
-		<view class="intro">本项目已包含uni ui组件，无需import和注册，可直接使用。在代码区键入字母u，即可通过代码助手列出所有可用组件。光标置于组件名称处按F1，即可查看组件文档。</view>
-		<text class="intro">详见：</text>
-		<uni-link :href="href" :text="href"></uni-link>
-		
-		<uni-grid>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
-			<uni-grid-item>1</uni-grid-item>
+
+		<uni-grid :showBorder="false">
+			<uni-grid-item class="app" v-for="a in apps" @click="open(a)">				
+				<image :src="a.icon" mode="aspectFit"></image>				
+				<text>{{a.name}}</text>				
+			</uni-grid-item>
 		</uni-grid>
 	</view>
 </template>
 
 <script>
+	const apps = [{
+			icon: '/static/icons/link.svg',
+			name: '连接',
+			url: '/pages/tunnel/tunnel',
+			internal: true
+		},
+		{
+			icon: '/static/icons/server.svg',
+			name: '连接',
+			url: '/pages/server/server',
+			internal: true
+		},
+		{
+			icon: '/static/icons/router.svg',
+			name: '设备',
+			url: '/pages/device/device',
+			internal: true
+		},
+		{
+			icon: '/static/icons/product.svg',
+			name: '产品',
+			url: '/pages/product/product',
+			internal: true
+		},
+		{
+			icon: '/static/icons/project.svg',
+			name: '项目',
+			url: '/pages/project/project',
+			internal: true
+		},
+		{
+			icon: '/static/icons/group.svg',
+			name: '用户',
+			url: '/pages/user/user',
+			internal: true
+		},
+		{
+			icon: '/static/icons/plugin.svg',
+			name: '插件',
+			url: '/pages/plugin/plugin',
+			internal: true
+		},
+		{
+			icon: '/static/icons/setting.svg',
+			name: '设置',
+			url: '/pages/setting/setting',
+			internal: true
+		},
+	]
 	export default {
 		data() {
 			return {
-				href: 'https://uniapp.dcloud.io/component/README?id=uniui'
+				apps: apps
 			}
 		},
 		methods: {
-
+			open(app) {
+				if (app.internal) {
+					uni.navigateTo({
+						url: app.url
+					})
+				} else {
+					
+				}
+			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.container {
-		padding: 20px;
-		font-size: 14px;
-		line-height: 24px;
+		.app {
+			display: flex;
+			flex-direction: column;
+			//justify-content: center;
+			//align-items: center;
+			text-align: center;
+			
+			image{
+				width: 60%;
+			}
+		}
 	}
 </style>

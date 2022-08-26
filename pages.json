@@ -2,81 +2,191 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "物联大师"
+			"navigationBarTitleText": "物联大师",
+			"enablePullDownRefresh": true
 		}
-	}    ,{
-            "path" : "pages/device/device",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/tunnel/tunnel",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/server/server",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/project/project",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/product/product",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/plugin/plugin",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/me/me",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/login/login",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/hub/hub",
+		"style": {
+			"navigationBarTitleText": "资源站",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/me/me",
+		"style": {
+			"navigationBarTitleText": "我的",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/master/master",
+		"style": {
+			"navigationBarTitleText": "主机",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "登录",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/device/device",
+		"style": {
+			"navigationBarTitleText": "设备",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/device/edit",
+		"style": {
+			"navigationBarTitleText": "设备编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/device/detail",
+		"style": {
+			"navigationBarTitleText": "设备详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/tunnel/tunnel",
+		"style": {
+			"navigationBarTitleText": "通道",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/tunnel/detail",
+		"style": {
+			"navigationBarTitleText": "通道详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/tunnel/edit",
+		"style": {
+			"navigationBarTitleText": "通道编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/server/server",
+		"style": {
+			"navigationBarTitleText": "服务器",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/server/edit",
+		"style": {
+			"navigationBarTitleText": "服务器编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/server/detail",
+		"style": {
+			"navigationBarTitleText": "服务器详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/project/project",
+		"style": {
+			"navigationBarTitleText": "项目",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/project/edit",
+		"style": {
+			"navigationBarTitleText": "项目编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/project/detail",
+		"style": {
+			"navigationBarTitleText": "项目详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/product/product",
+		"style": {
+			"navigationBarTitleText": "产品",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/product/detail",
+		"style": {
+			"navigationBarTitleText": "产品详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/product/edit",
+		"style": {
+			"navigationBarTitleText": "产品编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/plugin/plugin",
+		"style": {
+			"navigationBarTitleText": "插件",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/plugin/edit",
+		"style": {
+			"navigationBarTitleText": "插件编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/plugin/detail",
+		"style": {
+			"navigationBarTitleText": "插件详情",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/setting/setting",
+		"style": {
+			"navigationBarTitleText": "主机配置",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/user/user",
+		"style": {
+			"navigationBarTitleText": "用户",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/user/edit",
+		"style": {
+			"navigationBarTitleText": "用户编辑",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/user/detail",
+		"style": {
+			"navigationBarTitleText": "用户详情",
+			"enablePullDownRefresh": false
+		}
+
+	}],
+	"tabBar": {
+		"color": "#303030",
+		"selectedColor": "#1296db",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "/static/tabs/home1.png",
+				"selectedIconPath": "/static/tabs/home.png",
+				"text": "主页"
+			},
+			{
+				"pagePath": "pages/hub/hub",
+				"iconPath": "/static/tabs/hub1.png",
+				"selectedIconPath": "/static/tabs/hub.png",
+				"text": "资源"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"iconPath": "/static/tabs/me1.png",
+				"selectedIconPath": "/static/tabs/me.png",
+				"text": "我的"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "物联大师",
