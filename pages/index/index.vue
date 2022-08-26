@@ -103,7 +103,7 @@
 			color: #1296db;
 			
 			image{
-				width: 80%;
+				width: 60%;
 				display: block;
 			}
 		}

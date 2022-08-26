@@ -17,12 +17,14 @@
 			"navigationBarTitleText": "我的",
 			"enablePullDownRefresh": false
 		}
+		//#ifdef APP
 	}, {
 		"path": "pages/master/master",
 		"style": {
 			"navigationBarTitleText": "主机",
 			"enablePullDownRefresh": true
 		}
+		//#endif
 	}, {
 		"path": "pages/login/login",
 		"style": {
@@ -162,16 +164,14 @@
 			"enablePullDownRefresh": false
 		}
 
-	}    ,{
-            "path" : "pages/me/about",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/me/about",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}],
 	"tabBar": {
 		"color": "#303030",
 		"selectedColor": "#1296db",

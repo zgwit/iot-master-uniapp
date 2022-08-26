@@ -1,11 +1,15 @@
 <template>
 	<view class="container">
 		<uni-list>
+			<!-- #ifdef APP -->
+			<!-- 只在APP有中多主机管理 -->
 			<uni-list-item title="主机管理" link to="/pages/server/server">
 				<template v-slot:header>
 					<uni-icons class="icon" customPrefix="iconfont" type="icon-server" color="#1296db"></uni-icons>
 				</template>
 			</uni-list-item>
+			<!-- #endif -->
+
 			<uni-list-item title="使用反馈" link to="./feedback">
 				<template v-slot:header>
 					<uni-icons class="icon" customPrefix="iconfont" type="icon-service" color="#1296db"></uni-icons>
@@ -42,7 +46,7 @@
 
 <style lang="scss" scoped>
 	.container {
-		.icon{
+		.icon {
 			margin-right: 15rpx;
 			display: flex;
 			justify-content: center;
