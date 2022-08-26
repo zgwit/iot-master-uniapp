@@ -22,7 +22,7 @@
 		},
 		{
 			icon: '/static/icons/server.svg',
-			name: '连接',
+			name: '服务器',
 			url: '/pages/server/server',
 			internal: true
 		},
