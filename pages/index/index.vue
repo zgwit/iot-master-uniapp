@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 
-		<uni-grid class="apps" :showBorder="false">
+		<uni-grid class="apps" :showBorder="false" :column="4">
 			<uni-grid-item v-for="a in apps" @click="open(a)">
 				<view class="app">
 					<image :src="a.icon" mode="aspectFit"></image>				
@@ -33,27 +33,27 @@
 			internal: true
 		},
 		{
-			icon: '/static/icons/product.svg',
-			name: '产品',
-			url: '/pages/product/product',
-			internal: true
-		},
-		{
 			icon: '/static/icons/project.svg',
 			name: '项目',
 			url: '/pages/project/project',
 			internal: true
 		},
 		{
-			icon: '/static/icons/group.svg',
-			name: '用户',
-			url: '/pages/user/user',
+			icon: '/static/icons/product.svg',
+			name: '产品',
+			url: '/pages/product/product',
 			internal: true
 		},
 		{
 			icon: '/static/icons/plugin.svg',
 			name: '插件',
 			url: '/pages/plugin/plugin',
+			internal: true
+		},
+		{
+			icon: '/static/icons/group.svg',
+			name: '用户',
+			url: '/pages/user/user',
 			internal: true
 		},
 		{

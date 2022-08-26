@@ -1,6 +1,6 @@
 <template>
 	<view>
-		
+		<uni-search-bar @confirm="" @input="" placeholder="通道名称,SN,IMEI" />
 	</view>
 </template>
 
