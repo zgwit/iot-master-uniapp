@@ -16,7 +16,7 @@
 <script>
 	const apps = [{
 			icon: '/static/icons/link.svg',
-			name: '连接',
+			name: '通道',
 			url: '/pages/tunnel/tunnel',
 			internal: true
 		},
