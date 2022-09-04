@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 
-		<uni-grid class="apps" :showBorder="false" :column="4">
+		<uni-grid class="apps" :showBorder="false" :column="cols">
 			<uni-grid-item v-for="a in apps" @click="open(a)">
 				<view class="app">
 					<image :src="a.icon" mode="aspectFit"></image>				
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+	//console.log(uni.getWindowInfo().windowWidth)
 	const apps = [{
 			icon: '/static/icons/link.svg',
 			name: '通道',
@@ -66,8 +67,21 @@
 	export default {
 		data() {
 			return {
-				apps: apps
+				apps: apps,
+				cols: 4,
 			}
+		},
+		mounted() {
+			let w = uni.getWindowInfo().windowWidth
+			this.cols = 1
+			if (w > 200) this.cols = 2
+			if (w > 300) this.cols = 4
+			if (w > 500) this.cols = 6
+			if (w > 700) this.cols = 8
+			if (w > 500) this.cols = 6
+			if (w > 700) this.cols = 8
+			if (w > 1000) this.cols = 10
+			if (w > 1300) this.cols = 12
 		},
 		methods: {
 			open(app) {
