@@ -171,7 +171,16 @@
 			"enablePullDownRefresh": false
 		}
 
-	}],
+	}    ,{
+            "path" : "pages/gateway/gateway",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "网关",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"tabBar": {
 		"color": "#303030",
 		"selectedColor": "#1296db",
