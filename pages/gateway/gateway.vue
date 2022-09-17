@@ -7,10 +7,10 @@
 		</view>
 		
 		<uni-list>
-			<uni-list-item title="通道" to="/pages/tunnel/tunnel?gw="></uni-list-item>
-			<uni-list-item title="设备"></uni-list-item>
-			<uni-list-item title="产品"></uni-list-item>
-			<uni-list-item title="配置"></uni-list-item>
+			<uni-list-item title="通道列表" link to="/pages/tunnel/tunnel?gw="></uni-list-item>
+			<uni-list-item title="设备列表" link></uni-list-item>
+			<uni-list-item title="产品列表" link></uni-list-item>
+			<uni-list-item title="配置文件" link></uni-list-item>
 		</uni-list>
 		
 	</view>
