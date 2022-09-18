@@ -39,6 +39,12 @@ const apps = [
 		internal: true
 	},
 	{
+		icon: '/static/icons/design.svg',
+		name: '组态',
+		url: '/pages/interface/interface',
+		internal: true
+	},
+	{
 		icon: '/static/icons/plugin.svg',
 		name: '插件',
 		url: '/pages/plugin/plugin',

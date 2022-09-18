@@ -1,5 +1,11 @@
 {
 	"pages": [{
+		"path": "pages/login/login",
+		"style": {
+			"navigationBarTitleText": "登录",
+			"enablePullDownRefresh": false
+		}
+	}, {
 		"path": "pages/index/index",
 		"style": {
 			"navigationBarTitleText": "物联大师",
@@ -25,12 +31,6 @@
 			"enablePullDownRefresh": true
 		}
 		//#endif
-	}, {
-		"path": "pages/login/login",
-		"style": {
-			"navigationBarTitleText": "登录",
-			"enablePullDownRefresh": false
-		}
 	}, {
 		"path": "pages/device/device",
 		"style": {
@@ -194,6 +194,33 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "网关编辑",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/interface/interface",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "组态",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/interface/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/interface/edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑",
                 "enablePullDownRefresh": false
             }
             
