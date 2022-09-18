@@ -1,25 +1,55 @@
 <template>
 	<view>
 		<uni-search-bar @confirm="" @input="" placeholder="名称,ID" />
+		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
-			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.sn" link
-				:to="'./detail?id='+data.id" :rightText="data.addr">123</uni-list-item>
+			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.username" link
+				:to="'./detail?id='+data.id" :rightText="data.nickname"></uni-list-item>
 		</uni-list>
 	</view>
 </template>
 
 <script>
+import { HOST, requestAPI } from '../../const';
 	export default {
 		data() {
 			return {
-				datum: [{
-					id: 1,
-					name: "2",
-					sn: '3',
-					addr: ':8080'
-				}]
+				skip:0,
+				datum: []
 			};
+		},
+		onPullDownRefresh() {
+			this.skip = 0;
+		},
+		onReachBottom() {
+			this.load()
+		},
+		onReady() {
+			this.load()
+		},
+		methods:{
+			load() {
+				uni.showLoading({})
+				requestAPI({
+					url: "user/list",
+					data: {
+						skip: this.skip,
+					},
+					success: data=> {
+						this.datum = data;
+					},
+					complete() {
+						uni.hideLoading()
+						uni.stopPullDownRefresh()
+					}
+				})
+			},
+			create() {
+				uni.navigateTo({
+					url:"./edit"
+				})
+			}
 		}
 	}
 </script>

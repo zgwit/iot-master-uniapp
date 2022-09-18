@@ -1,53 +1,61 @@
 <template>
-	<view>
-		<view id="container"></view>
+	<view class="p10">
+		<uni-forms>
+			<uni-forms-item label="名称" name="name">
+				<uni-easyinput  v-model="data.name" placeholder="" />
+			</uni-forms-item>
+			<uni-forms-item label="版本" name="version">
+				<uni-easyinput  v-model="data.version" placeholder="" />
+			</uni-forms-item>
+		</uni-forms>
+				
+		<button type="primary" @click="save">保存</button>
 	</view>
 </template>
 
 <script>
-	import {
-		Graph
-	} from "@antv/x6"
+import { HOST, requestAPI } from '../../const';
 	export default {
 		data() {
 			return {
-
+				id: '',
+				data:{
+					name:"",
+					version:"",
+				}
 			};
 		},
-		onReady() {
-			const graph = new Graph({
-				container: document.getElementById('container'),
-				width: 800,
-				height: 600,
-				grid: true,
-			});
-
-			graph.fromJSON({
-				// 节点
-				nodes: [{
-						id: 'node1', // String，可选，节点的唯一标识
-						x: 40, // Number，必选，节点位置的 x 值
-						y: 40, // Number，必选，节点位置的 y 值
-						width: 80, // Number，可选，节点大小的 width 值
-						height: 40, // Number，可选，节点大小的 height 值
-						label: 'hello', // String，节点标签
+		onLoad(options) {
+			this.id = options.id
+			if (this.id) this.load()
+		},
+		methods: {
+			load(){
+				requestAPI({
+					url: 'interface/'+this.id,
+					success: data=> {
+						this.data = data
+					}
+				})
+			},
+			save(){
+				uni.showLoading({})
+				requestAPI({
+					url: 'interface/' + (this.id || 'create'),
+					method: 'POST',
+					data: this.data,
+					success() {
+						uni.navigateBack()
 					},
-					{
-						id: 'node2', // String，节点的唯一标识
-						x: 160, // Number，必选，节点位置的 x 值
-						y: 180, // Number，必选，节点位置的 y 值
-						width: 80, // Number，可选，节点大小的 width 值
-						height: 40, // Number，可选，节点大小的 height 值
-						label: 'world', // String，节点标签
-					},
-				],
-				// 边
-				edges: [],
-			})
+					complete() {
+						uni.hideLoading()
+					}
+				})
+			}
 		}
 	}
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+	
 </style>

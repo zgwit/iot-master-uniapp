@@ -4,8 +4,8 @@
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
-			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
-				:to="'./detail?id='+data.id" :rightText="data.addr">123</uni-list-item>
+			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" link
+				:to="'./detail?id='+data.id"></uni-list-item>
 		</uni-list>
 	</view>
 </template>
