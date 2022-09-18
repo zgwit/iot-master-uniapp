@@ -23,7 +23,7 @@ const apps = [
 	{
 		icon: '/static/icons/server.svg',
 		name: '设备',
-		url: '/pages/server/server',
+		url: '/pages/device/device',
 		internal: true
 	},
 	{

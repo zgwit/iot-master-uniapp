@@ -176,6 +176,24 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "网关",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/gateway/detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "网关详情",
+                "enablePullDownRefresh": true
+            }
+            
+        }
+        ,{
+            "path" : "pages/gateway/edit",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "网关编辑",
                 "enablePullDownRefresh": false
             }
             

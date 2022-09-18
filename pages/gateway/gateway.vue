@@ -1,18 +1,11 @@
 <template>
 	<view>
-		
-		<view class="">
-			显示网关状态，在线，连接数等
-			ClientID，Username，Password
-		</view>
-		
+		<uni-search-bar @confirm="" @input="" placeholder="名称,ID" />
+
 		<uni-list>
-			<uni-list-item title="通道列表" link to="/pages/tunnel/tunnel?gw="></uni-list-item>
-			<uni-list-item title="设备列表" link></uni-list-item>
-			<uni-list-item title="产品列表" link></uni-list-item>
-			<uni-list-item title="配置文件" link></uni-list-item>
+			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.sn" link
+				:to="'./detail?id='+data.id" :rightText="data.addr">123</uni-list-item>
 		</uni-list>
-		
 	</view>
 </template>
 
@@ -20,7 +13,12 @@
 	export default {
 		data() {
 			return {
-				
+				datum: [{
+					id: 1,
+					name: "2",
+					sn: '3',
+					addr: ':8080'
+				}]
 			};
 		}
 	}

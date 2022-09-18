@@ -1,5 +1,10 @@
 <template>
 	<view>
+		<view class="">
+			显示通道状态，在线，设备数等
+			ClientID，Username，Password
+		</view>
+		
 		<uni-list>
 			<uni-list-item title="ID" note=""></uni-list-item>
 			<uni-list-item title="名称" note=""></uni-list-item>

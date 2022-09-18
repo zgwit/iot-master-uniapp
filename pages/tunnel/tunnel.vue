@@ -1,6 +1,7 @@
 <template>
 	<view>
 		<uni-search-bar @confirm="" @input="" placeholder="名称,地址,SN" />
+		
 		<uni-list>
 			<uni-list-item v-for="(data,index) in datum"
 			 :key="index" :title="data.name" :note="data.sn"
