@@ -30,7 +30,7 @@ import { HOST, requestAPI } from '../../const';
 		methods: {
 			load(){
 				requestAPI({
-					url: 'project/'+this.id,
+					url: 'tunnel/'+this.id,
 					success: data=> {
 						this.data = data
 					}

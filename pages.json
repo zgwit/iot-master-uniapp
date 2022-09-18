@@ -142,7 +142,7 @@
 	}, {
 		"path": "pages/setting/setting",
 		"style": {
-			"navigationBarTitleText": "主机配置",
+			"navigationBarTitleText": "系统配置",
 			"enablePullDownRefresh": false
 		}
 	}, {
@@ -221,6 +221,31 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "编辑",
+                "enablePullDownRefresh": false
+            }
+        }
+        ,{
+            "path" : "pages/interface/design",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设计器",
+                "enablePullDownRefresh": false
+            }
+        }
+        ,{
+            "path" : "pages/project/interface",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "组态",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/device/interface",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             

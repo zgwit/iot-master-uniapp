@@ -12,15 +12,10 @@
 			
 		</uni-card>
 		
-		<uni-section title="串口参数" type="line">
-			<uni-list>
-				<uni-list-item title="端口" note=""></uni-list-item>
-				<uni-list-item title="波特率" note=""></uni-list-item>
-				<uni-list-item title="数据长度" note=""></uni-list-item>
-				<uni-list-item title="停止位" note=""></uni-list-item>
-				<uni-list-item title="校验" note=""></uni-list-item>
-			</uni-list>
-		</uni-section>
+		<uni-list>
+			<uni-list-item title="编辑" link :to="'./edit?id='+id"></uni-list-item>
+			<uni-list-item title="设备列表" note=""></uni-list-item>
+		</uni-list>
 
 		
 		<uni-section title="设备" type="line">
