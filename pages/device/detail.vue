@@ -16,7 +16,15 @@
 		</uni-list>
 		
 		<uni-section title="变量" type="line">
-			内容主体，可自定义内容及样式
+			<uni-grid :column="3">
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item>温度：30</uni-grid-item>
+			</uni-grid>
 		</uni-section>
 		
 	</view>

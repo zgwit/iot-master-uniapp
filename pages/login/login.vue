@@ -1,10 +1,10 @@
 <template>
-	<view class="container">
+	<view class="login">
 
 		<view class="logo">
 			<image src="/static/iot.svg" mode="aspectFit"></image>
 		</view>
-		<uni-title type="h1" title="物联大师" align="center"></uni-title>
+		<!-- <uni-title type="h1" title="物联大师" align="center"></uni-title> -->
 
 		<uni-forms>
 			<uni-forms-item label="用户名" name="username">
@@ -58,15 +58,15 @@
 </script>
 
 <style lang="scss" scoped>
-	.container {
-		padding: 10rpx;
+	.login {
+		padding: 60rpx;
 	}
 
 	.logo {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 40rpx;
+		//padding: 10rpx;A
 
 		image {
 			width: 60%;

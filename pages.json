@@ -2,13 +2,13 @@
 	"pages": [{
 		"path": "pages/login/login",
 		"style": {
-			"navigationBarTitleText": "登录",
+			"navigationBarTitleText": "物联大师 开源版",
 			"enablePullDownRefresh": false
 		}
 	}, {
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "物联大师",
+			"navigationBarTitleText": "物联大师 开源版",
 			"enablePullDownRefresh": true
 		}
 	}, {

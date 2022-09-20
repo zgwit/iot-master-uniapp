@@ -5,7 +5,11 @@
 
 		<uni-list>
 			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
-				:to="'./detail?id='+data.id" :rightText="data.addr">123</uni-list-item>
+				:to="'./detail?id='+data.id" :rightText="data.addr">
+				<template #header>
+					<image class="icon" src="/static/icons/router.svg" mode="aspectFit"></image>
+				</template>
+			</uni-list-item>
 		</uni-list>
 	</view>
 </template>
@@ -55,5 +59,8 @@ import { HOST, requestAPI } from '../../const';
 </script>
 
 <style lang="scss">
-
+.icon{
+	width: 60rpx;
+	height: 60rpx;
+}
 </style>
