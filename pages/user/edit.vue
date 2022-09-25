@@ -1,5 +1,5 @@
 <template>
-	<view class="p10">
+	<view class="p20">
 		<uni-forms>
 			<uni-forms-item label="用户名" name="username">
 				<uni-easyinput  v-model="data.username" placeholder="" />
@@ -17,7 +17,10 @@
 </template>
 
 <script>
-import { HOST, requestAPI } from '../../const';
+	import {
+		HOST,
+		requestAPI
+	} from '../../const';
 	export default {
 		data() {
 			return {

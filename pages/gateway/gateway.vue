@@ -5,7 +5,7 @@
 
 		<uni-list>
 			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
-				:to="'./detail?id='+data.id" :rightText="data.addr">
+				:to="'./detail?id='+data.id">
 				<template #header>
 					<image class="icon" src="/static/icons/router.svg" mode="aspectFit"></image>
 				</template>

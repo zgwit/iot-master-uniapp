@@ -1,5 +1,5 @@
 <template>
-	<view class="p10">
+	<view class="p20">
 		<uni-forms>
 			<uni-forms-item label="名称" name="name">
 				<uni-easyinput  v-model="data.name" placeholder="" />
@@ -19,17 +19,22 @@
 </template>
 
 <script>
-import { HOST, requestAPI } from '../../const';
+	import cryptoRandomString from 'crypto-random-string';
+	import {
+		HOST,
+		requestAPI
+	} from '../../const';
 	export default {
 		data() {
 			return {
 				id: '',
-				data:{
-					name:"",
-					manufacturer:"",
-					version:"",
-					points:[],
-					pollers:[],
+				data: {
+					id: "",
+					name: "",
+					type: "",
+					version: "",
+					username: "",
+					password: "",
 				}
 			};
 		},
