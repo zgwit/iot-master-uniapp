@@ -250,6 +250,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/product/point",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "编辑点位",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/product/poller",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "寻址器",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#303030",
