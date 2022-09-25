@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-search-bar @confirm="" @input="" placeholder="名称,ID" />
+		<uni-search-bar @confirm="onSearch" @input="" placeholder="名称,ID" v-model="keyword"/>
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
@@ -15,15 +15,20 @@
 </template>
 
 <script>
-import { HOST, requestAPI } from '../../const';
+	import {
+		HOST,
+		requestAPI
+	} from '../../const';
 	export default {
 		data() {
 			return {
-				skip:0,
+				keyword: "",
+				limit: 20,
 				datum: []
 			};
 		},
 		onPullDownRefresh() {
+			this.datum = [];
 			this.skip = 0;
 		},
 		onReachBottom() {
@@ -32,16 +37,21 @@ import { HOST, requestAPI } from '../../const';
 		onReady() {
 			this.load()
 		},
-		methods:{
+		methods: {
 			load() {
 				uni.showLoading({})
 				requestAPI({
-					url: "gateway/list",
+					url: "gateway/search",
+					method: "POST",
 					data: {
-						skip: this.skip,
+						skip: this.datum.length,
+						limit: this.limit,
+						keyword: {
+							name: this.keyword
+						}
 					},
-					success: data=> {
-						this.datum = data;
+					success: data => {
+						this.datum = this.datum.concat(data)
 					},
 					complete() {
 						uni.hideLoading()
@@ -49,9 +59,13 @@ import { HOST, requestAPI } from '../../const';
 					}
 				})
 			},
+			onSearch() {
+				this.datum = []
+				this.load()
+			},
 			create() {
 				uni.navigateTo({
-					url:"./edit"
+					url: "./edit"
 				})
 			}
 		}
@@ -59,8 +73,9 @@ import { HOST, requestAPI } from '../../const';
 </script>
 
 <style lang="scss">
-.icon{
-	width: 60rpx;
-	height: 60rpx;
-}
+	.icon {
+		width: 60rpx;
+		height: 60rpx;
+		padding-right: 20rpx;
+	}
 </style>

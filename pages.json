@@ -14,7 +14,7 @@
 	}, {
 		"path": "pages/hub/hub",
 		"style": {
-			"navigationBarTitleText": "资源站",
+			"navigationBarTitleText": "资源站", 
 			"enablePullDownRefresh": true
 		}
 	}, {
@@ -277,7 +277,7 @@
 	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "物联大师",
+		"navigationBarTitleText": "物联大师 开源版",
 		"navigationBarBackgroundColor": "#1296db",
 		"backgroundColor": "#ffffff"
 	}

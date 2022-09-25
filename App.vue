@@ -24,4 +24,25 @@
 	}
 
 	/* #endif */
+	
+	
+	.list-icon {
+		margin-right: 15rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		//font-weight: bold;
+	}
+	
+	.p10{
+		padding: 10rpx;
+	}
+	
+	.p20{
+		padding: 20rpx;
+	}
+	
+	.p30{
+		padding: 30rpx;
+	}
 </style>

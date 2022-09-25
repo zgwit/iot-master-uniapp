@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "@antv/x6": "^1.34.1",
-    "md5": "^2.3.0"
+    "crypto-random-string": "^5.0.0",
+    "md5": "^2.3.0",
+    "randomstring": "^1.2.2"
   }
 }
