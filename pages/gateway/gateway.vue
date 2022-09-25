@@ -47,7 +47,8 @@
 						skip: this.datum.length,
 						limit: this.limit,
 						keyword: {
-							name: this.keyword
+							id: this.keyword,
+							name: this.keyword,
 						}
 					},
 					success: data => {
