@@ -277,6 +277,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/project/device",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "项目设备",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#303030",
