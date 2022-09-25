@@ -4,9 +4,38 @@
 			<uni-forms-item label="名称" name="name">
 				<uni-easyinput  v-model="data.name" placeholder="" />
 			</uni-forms-item>
+			<uni-forms-item label="类型" name="type">
+				<uni-easyinput  v-model="data.type" placeholder="serial,tcp-client,udp-client,tcp-server,udp-server" />
+			</uni-forms-item>
+			<uni-forms-item label="地址" name="addr">
+				<uni-easyinput  v-model="data.addr" placeholder="" />
+			</uni-forms-item>
 			
-			TODO：编辑 协议，串口参数
+			<uni-section title="串口参数" type="line" v-if="data.type=='serial'">
+				<uni-forms-item label="串口" name="name">
+					<uni-easyinput  v-model="data.serial.port" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+				<uni-forms-item label="波特率" name="name">
+					<uni-easyinput  v-model="data.serial.baud_rate" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+				<uni-forms-item label="字长" name="name">
+					<uni-easyinput  v-model="data.serial.data_bits" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+				<uni-forms-item label="停止位" name="name">
+					<uni-easyinput  v-model="data.serial.stop_bits" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+				<uni-forms-item label="校验" name="name">
+					<uni-easyinput  v-model="data.serial.party" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+			</uni-section>
+			
+			<uni-section title="协议" type="line">
+				<uni-forms-item label="名称" name="name">
+					<uni-easyinput  v-model="data.protocol.name" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+			</uni-section>
 		</uni-forms>
+		
 				
 		<button type="primary" @click="save">保存</button>
 	</view>
@@ -20,6 +49,16 @@ import { HOST, requestAPI } from '../../const';
 				id: '',
 				data:{
 					name:"",
+					protocol: {
+						name: ""
+					},
+					serial: {
+						port: "",
+						baud_rate: 9600,
+						data_bits: 8,
+						stop_bits: 1,
+						party: 0
+					}
 				}
 			};
 		},
