@@ -1,12 +1,11 @@
 <template>
 	<view>
 
-		<uni-card :title="data.name" extra="在线" note="Tips">
+		<uni-card :title="data.name" :subTitle="data.id" extra="在线" note="Tips" thumbnail="/static/icons/router.svg">
 			<uni-list :border="false">
-				<uni-list-item title="ID" :rightText="data.id"></uni-list-item>
 				<uni-list-item title="MQTT账号" :rightText="data.username"></uni-list-item>
 				<uni-list-item title="MQTT密码" :rightText="data.password"></uni-list-item>
-				<uni-list-item title="创建时间" :rightText="data.created"></uni-list-item>
+				<uni-list-item title="创建时间" :rightText="format(data.created)"></uni-list-item>
 			</uni-list>
 
 		</uni-card>
@@ -38,9 +37,11 @@
 </template>
 
 <script>
+	import dayjs from 'dayjs';
 	import {
 		requestAPI
 	} from '../../const';
+import { dateFormat } from '../../lib/time';
 	export default {
 		data() {
 			return {
@@ -55,13 +56,14 @@
 			this.load()
 		},
 		methods: {
+			format: dateFormat,
 			load() {
 				requestAPI({
 					url: 'gateway/' + this.id,
 					success: res => {
 						this.data = res;
 					},
-					complete(){
+					complete() {
 						uni.stopPullDownRefresh()
 					}
 				})

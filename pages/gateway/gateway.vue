@@ -53,6 +53,7 @@
 					},
 					success: data => {
 						this.datum = this.datum.concat(data)
+						
 					},
 					complete() {
 						uni.hideLoading()

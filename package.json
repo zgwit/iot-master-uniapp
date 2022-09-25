@@ -2,6 +2,7 @@
   "dependencies": {
     "@antv/x6": "^1.34.1",
     "crypto-random-string": "^5.0.0",
+    "dayjs": "^1.11.5",
     "md5": "^2.3.0",
     "randomstring": "^1.2.2"
   }
