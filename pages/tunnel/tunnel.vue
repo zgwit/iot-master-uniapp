@@ -1,25 +1,34 @@
 <template>
 	<view>
-		<uni-search-bar @confirm="" @input="" placeholder="名称,ID" />
+		<uni-search-bar @confirm="onSearch" @input="" placeholder="ID 名称" v-model="keyword"/>
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
-			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" link
-				:to="'./detail?id='+data.id"></uni-list-item>
+			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
+				:to="'./detail?id='+data.id">
+				<template #header>
+					<image class="icon" src="/static/icons/link.svg" mode="aspectFit"></image>
+				</template>
+			</uni-list-item>
 		</uni-list>
 	</view>
 </template>
 
 <script>
-import { HOST, requestAPI } from '../../const';
+	import {
+		HOST,
+		requestAPI
+	} from '../../const';
 	export default {
 		data() {
 			return {
-				skip:0,
+				keyword: "",
+				limit: 20,
 				datum: []
 			};
 		},
 		onPullDownRefresh() {
+			this.datum = [];
 			this.skip = 0;
 		},
 		onReachBottom() {
@@ -32,12 +41,19 @@ import { HOST, requestAPI } from '../../const';
 			load() {
 				uni.showLoading({})
 				requestAPI({
-					url: "tunnel/list",
+					url: "tunnel/search",
+					method: "POST",
 					data: {
-						skip: this.skip,
+						skip: this.datum.length,
+						limit: this.limit,
+						keyword: {
+							id: this.keyword,
+							name: this.keyword,
+						}
 					},
-					success: data=> {
-						this.datum = data;
+					success: data => {
+						this.datum = this.datum.concat(data)
+						
 					},
 					complete() {
 						uni.hideLoading()
@@ -45,9 +61,13 @@ import { HOST, requestAPI } from '../../const';
 					}
 				})
 			},
+			onSearch() {
+				this.datum = []
+				this.load()
+			},
 			create() {
 				uni.navigateTo({
-					url:"./edit"
+					url: "./edit"
 				})
 			}
 		}
@@ -55,5 +75,9 @@ import { HOST, requestAPI } from '../../const';
 </script>
 
 <style lang="scss">
-
+	.icon {
+		width: 60rpx;
+		height: 60rpx;
+		padding-right: 20rpx;
+	}
 </style>

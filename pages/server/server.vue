@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-search-bar @confirm="" @input="" placeholder="名称,ID" />
+		<uni-search-bar @confirm="" @input="" placeholder="ID 名称" />
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>

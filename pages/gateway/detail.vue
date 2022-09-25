@@ -26,6 +26,11 @@
 					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-pen"></uni-icons>
 				</template>
 			</uni-list-item>
+			<uni-list-item title="删除网关" @click="remove" :clickable="true">
+				<template v-slot:header>
+					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-dustbin"></uni-icons>
+				</template>
+			</uni-list-item>
 			<uni-list-item title="配置文件" link disabled>
 				<template v-slot:header>
 					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-warning"></uni-icons>
@@ -33,6 +38,10 @@
 			</uni-list-item>
 		</uni-list>
 
+		
+		<uni-section title="日志" type="line">
+			TODO：Event
+		</uni-section>
 	</view>
 </template>
 
@@ -41,7 +50,9 @@
 	import {
 		requestAPI
 	} from '../../const';
-import { dateFormat } from '../../lib/time';
+	import {
+		dateFormat
+	} from '../../lib/time';
 	export default {
 		data() {
 			return {
@@ -67,6 +78,27 @@ import { dateFormat } from '../../lib/time';
 						uni.stopPullDownRefresh()
 					}
 				})
+			},
+			remove() {
+				uni.showModal({
+					title: '提示',
+					content: '确定删除？',
+					success: res => {
+						if (res.confirm) {
+							console.log('用户点击确定');
+							requestAPI({
+								url: 'gateway/' + this.id + '/delete',
+								success: res => {
+									uni.navigateBack();
+									uni.showToast({
+										title: "删除成功"
+									})
+								}
+							})
+						}
+					},
+					fail: console.error
+				});
 			}
 		}
 	}
