@@ -28,15 +28,11 @@
 			</uni-list-item>
 		</uni-list>
 		
-		<uni-section title="变量" type="line">
+		<uni-section title="变量" type="line" v-if="product && product.points">
 			<uni-grid :column="3">
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
+				<uni-grid-item v-for="(point,index) in product.points" :key="index">
+					{{point.label || point.name }} 0
+				</uni-grid-item>
 			</uni-grid>
 		</uni-section>
 		
@@ -58,7 +54,8 @@
 	export default {
 		data() {
 			return {
-				data: {}
+				data: {},
+				product: {}
 			};
 		},
 		onLoad(options) {
@@ -75,6 +72,19 @@
 					url: 'device/'+this.id,
 					success: res=>{
 						this.data = res;
+						if (res.product_id)
+							this.loadProduct()
+					},
+					complete() {
+						uni.stopPullDownRefresh()
+					}
+				})
+			},
+			loadProduct() {
+				requestAPI({
+					url: 'product/'+this.id.product_id,
+					success: res=>{
+						this.product = res;
 					},
 					complete() {
 						uni.stopPullDownRefresh()

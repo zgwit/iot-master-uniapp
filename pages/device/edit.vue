@@ -8,13 +8,13 @@
 				<uni-easyinput type="number" v-model="data.station" placeholder="从机号" />
 			</uni-forms-item>
 			<uni-forms-item label="通道" name="tunnel_id">
-				<uni-easyinput  v-model="data.tunnel_id" placeholder="选择" />
+				<uni-easyinput  v-model="data.tunnel_id" placeholder="点击右边小图标选择" suffixIcon="plus" @iconClick="selectTunnel"/>
 			</uni-forms-item>
 			<uni-forms-item label="产品" name="product_id">
-				<uni-easyinput  v-model="data.product_id" placeholder="选择" />
+				<uni-easyinput  v-model="data.product_id" placeholder="点击右边小图标选择" suffixIcon="plus" @iconClick="selectProduct"/>
 			</uni-forms-item>
 			<uni-forms-item label="组态" name="interface_id">
-				<uni-easyinput  v-model="data.interface_id" placeholder="选择" />
+				<uni-easyinput  v-model="data.interface_id" placeholder="点击右边小图标选择" suffixIcon="plus" @iconClick="selectInterface"/>
 			</uni-forms-item>
 		</uni-forms>
 				
@@ -61,6 +61,36 @@ import { HOST, requestAPI } from '../../const';
 					},
 					complete() {
 						uni.hideLoading()
+					}
+				})
+			},
+			selectTunnel() {
+				uni.navigateTo({
+					url: "/pages/tunnel/tunnel?select=true",
+					events:{
+						select: id=>{
+							this.data.tunnel_id = id
+						}
+					}
+				})
+			},
+			selectProduct() {
+				uni.navigateTo({
+					url: "/pages/product/product?select=true",
+					events:{
+						select: id=>{
+							this.data.product_id = id
+						}
+					}
+				})
+			},
+			selectInterface() {
+				uni.navigateTo({
+					url: "/pages/interface/interface?select=true",
+					events:{
+						select: id=>{
+							this.data.interface_id = id
+						}
 					}
 				})
 			}

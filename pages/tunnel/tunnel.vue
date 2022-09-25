@@ -5,7 +5,7 @@
 
 		<uni-list>
 			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
-				:to="'./detail?id='+data.id">
+				@click="open(data)" :clickable="true">
 				<template #header>
 					<image class="icon" src="/static/icons/link.svg" mode="aspectFit"></image>
 				</template>
@@ -37,6 +37,7 @@
 			this.load()
 		},
 		onLoad(options) {
+			this.selecting = !! options.select
 			this.server = options.server
 			this.gateway = options.gateway
 			this.load()
@@ -77,6 +78,18 @@
 				uni.navigateTo({
 					url: "./edit"
 				})
+			},
+			open(data) {
+				if (this.selecting) {
+					this.getOpenerEventChannel().emit("select", data.id)
+					uni.navigateBack()
+					return
+				}
+				
+				uni.navigateTo({
+					url:'./detail?id='+data.id
+				})
+				
 			}
 		}
 	}
