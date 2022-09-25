@@ -4,8 +4,21 @@
 			<uni-forms-item label="名称" name="name">
 				<uni-easyinput  v-model="data.name" placeholder="" />
 			</uni-forms-item>
+			<uni-forms-item label="类型" name="type">
+				<uni-easyinput  v-model="data.type" placeholder="tcp,udp" />
+			</uni-forms-item>
+			<uni-forms-item label="地址" name="addr">
+				<uni-easyinput  v-model="data.addr" placeholder="" />
+			</uni-forms-item>
 			
-			TODO：编辑 地址 协议 默认设备
+			<uni-section title="协议" type="line">
+				<uni-forms-item label="名称" name="name">
+					<uni-easyinput  v-model="data.protocol.name" placeholder="TODO:改为下拉选择" />
+				</uni-forms-item>
+			</uni-section>
+			
+			<uni-section title="默认设备" type="line">
+			</uni-section>
 		</uni-forms>
 				
 		<button type="primary" @click="save">保存</button>
@@ -20,6 +33,12 @@ import { HOST, requestAPI } from '../../const';
 				id: '',
 				data:{
 					name:"",
+					type: "",
+					addr: "",
+					protocol: {
+						name: ""
+					},
+					devices: []
 				}
 			};
 		},

@@ -49,6 +49,8 @@ import { HOST, requestAPI } from '../../const';
 				id: '',
 				data:{
 					name:"",
+					type: "",
+					addr: "",
 					protocol: {
 						name: ""
 					},
