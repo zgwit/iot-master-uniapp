@@ -21,7 +21,7 @@ const apps = [
 		internal: true
 	},
 	{
-		icon: '/static/icons/server.svg',
+		icon: '/static/icons/device.svg',
 		name: '设备',
 		url: '/pages/device/device',
 		internal: true
@@ -30,12 +30,6 @@ const apps = [
 		icon: '/static/icons/project.svg',
 		name: '项目',
 		url: '/pages/project/project',
-		internal: true
-	},
-	{
-		icon: '/static/icons/product.svg',
-		name: '产品',
-		url: '/pages/product/product',
 		internal: true
 	},
 	{
@@ -48,6 +42,12 @@ const apps = [
 		icon: '/static/icons/plugin.svg',
 		name: '插件',
 		url: '/pages/plugin/plugin',
+		internal: true
+	},
+	{
+		icon: '/static/icons/product.svg',
+		name: '产品',
+		url: '/pages/product/product',
 		internal: true
 	},
 	{

@@ -34,7 +34,7 @@
 		onReachBottom() {
 			this.load()
 		},
-		onReady() {
+		onLoad() {
 			this.load()
 		},
 		methods: {
@@ -46,14 +46,13 @@
 					data: {
 						skip: this.datum.length,
 						limit: this.limit,
-						keyword: {
+						keyword: this.keyword ? {
 							id: this.keyword,
 							name: this.keyword,
-						}
+						} : {},
 					},
 					success: data => {
 						this.datum = this.datum.concat(data)
-						
 					},
 					complete() {
 						uni.hideLoading()

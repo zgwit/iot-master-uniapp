@@ -15,7 +15,7 @@
 		<uni-list>
 			<uni-list-item title="设备列表" link :to="'/pages/device/device?tunnel='+id">
 				<template v-slot:header>
-					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-server"></uni-icons>
+					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-list"></uni-icons>
 				</template>
 			</uni-list-item>
 			<uni-list-item title="编辑通道" link :to="'./edit?id='+id">
@@ -62,7 +62,7 @@
 			format: dateFormat,
 			load() {
 				requestAPI({
-					url: 'gateway/' + this.id,
+					url: 'tunnel/' + this.id,
 					success: res => {
 						this.data = res;
 					},
@@ -79,7 +79,7 @@
 						if (res.confirm) {
 							console.log('用户点击确定');
 							requestAPI({
-								url: 'gateway/' + this.id + '/delete',
+								url: 'tunnel/' + this.id + '/delete',
 								success: res => {
 									uni.navigateBack();
 									uni.showToast({

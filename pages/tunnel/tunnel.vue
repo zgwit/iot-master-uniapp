@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-search-bar @confirm="onSearch" @input="" placeholder="ID 名称" v-model="keyword"/>
+		<uni-search-bar @confirm="onSearch" @input="" placeholder="ID 名称" v-model="keyword" />
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
@@ -22,6 +22,8 @@
 	export default {
 		data() {
 			return {
+				server: "",
+				gateway: "",
 				keyword: "",
 				limit: 20,
 				datum: []
@@ -34,10 +36,12 @@
 		onReachBottom() {
 			this.load()
 		},
-		onReady() {
+		onLoad(options) {
+			this.server = options.server
+			this.gateway = options.gateway
 			this.load()
 		},
-		methods:{
+		methods: {
 			load() {
 				uni.showLoading({})
 				requestAPI({
@@ -46,14 +50,18 @@
 					data: {
 						skip: this.datum.length,
 						limit: this.limit,
-						keyword: {
+						keyword: this.keyword ? {
 							id: this.keyword,
 							name: this.keyword,
-						}
+						} : {},
+						filter: this.server ? {
+							server_id: this.server
+						} : (this.gateway ? {
+							gateway_id: this.gateway
+						} : {})
 					},
 					success: data => {
 						this.datum = this.datum.concat(data)
-						
 					},
 					complete() {
 						uni.hideLoading()
