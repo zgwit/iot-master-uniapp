@@ -45,7 +45,7 @@
             "sdkConfigs" : {}
         },
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     /* SDK配置 */
@@ -59,20 +59,30 @@
         },
         "usingComponents" : true,
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
         }
     },
     "vueVersion" : "3",
     "h5" : {
         "title" : "物联大师",
         "router" : {
-            "mode" : "history"
+            "mode" : "history",
+            "base" : "/"
         },
         "uniStatistics" : {
-            "enable" : true
+            "enable" : false
+        },
+        "devServer" : {
+            "https" : false
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : false
+            }
         }
     },
     "uniStatistics" : {
         "version" : "2"
-    }
+    },
+    "fallbackLocale" : "zh-Hans"
 }

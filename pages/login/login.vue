@@ -24,7 +24,7 @@
 		HOST,
 		requestAPI
 	} from '../../const';
-	import * as md5 from 'md5'
+	import {Md5} from 'ts-md5'
 	export default {
 		data() {
 			return {
@@ -41,7 +41,7 @@
 					method: "POST",
 					data: {
 						username: this.formData.username,
-						password: md5(this.formData.password)
+						password: Md5.hashStr(this.formData.password)
 					},
 					success: data => {
 						uni.switchTab({
