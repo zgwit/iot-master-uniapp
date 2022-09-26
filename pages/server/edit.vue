@@ -44,6 +44,7 @@ import { HOST, requestAPI } from '../../const';
 		},
 		onLoad(options) {
 			this.id = options.id
+			this.data.gateway_id = options.gateway
 			if (this.id) this.load()
 		},
 		methods: {

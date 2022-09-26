@@ -39,6 +39,7 @@ import { HOST, requestAPI } from '../../const';
 		},
 		onLoad(options) {
 			this.id = options.id
+			this.data.tunnel_id = options.tunnel
 			if (this.id) this.load()
 		},
 		methods: {

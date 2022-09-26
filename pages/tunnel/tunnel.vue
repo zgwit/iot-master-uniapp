@@ -32,6 +32,7 @@
 		onPullDownRefresh() {
 			this.datum = [];
 			this.skip = 0;
+			this.load()
 		},
 		onReachBottom() {
 			this.load()
@@ -76,7 +77,7 @@
 			},
 			create() {
 				uni.navigateTo({
-					url: "./edit"
+					url: "./edit?server="+this.server+"&gateway="+this.gateway
 				})
 			},
 			open(data) {

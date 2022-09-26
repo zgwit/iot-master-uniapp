@@ -30,6 +30,7 @@
 		onPullDownRefresh() {
 			this.datum = [];
 			this.skip = 0;
+			this.load()
 		},
 		onReachBottom() {
 			this.load()

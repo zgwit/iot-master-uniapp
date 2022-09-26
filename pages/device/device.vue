@@ -31,6 +31,7 @@
 		onPullDownRefresh() {
 			this.datum = [];
 			this.skip = 0;
+			this.load()
 		},
 		onReachBottom() {
 			this.load()
@@ -72,7 +73,7 @@
 			},
 			create() {
 				uni.navigateTo({
-					url: "./edit"
+					url: "./edit?tunnel="+this.tunnel
 				})
 			},
 			open(data) {
