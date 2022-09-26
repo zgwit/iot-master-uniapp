@@ -1,9 +1,14 @@
 <template>
 	<view>
-		<uni-search-bar @confirm="onSearch" @input="" placeholder="ID 名称" v-model="keyword"/>
+		<uni-search-bar @confirm="onSearch" @input="" placeholder="ID 名称" v-model="keyword" />
 		<uni-fab @fabClick="create"></uni-fab>
 
 		<uni-list>
+			<uni-list-item title="内置网关" note="internal" link to="./internal">
+				<template #header>
+					<image class="icon" src="/static/icons/router.svg" mode="aspectFit"></image>
+				</template>
+			</uni-list-item>
 			<uni-list-item v-for="(data,index) in datum" :key="index" :title="data.name" :note="data.id" link
 				:to="'./detail?id='+data.id">
 				<template #header>
@@ -16,9 +21,9 @@
 
 <script>
 	import {
-		HOST,
+
 		requestAPI
-	} from '../../const';
+	} from '../../lib/request';
 	export default {
 		data() {
 			return {

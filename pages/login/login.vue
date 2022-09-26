@@ -21,9 +21,9 @@
 
 <script>
 	import {
-		HOST,
+		
 		requestAPI
-	} from '../../const';
+	} from '../../lib/request';
 	import {Md5} from 'ts-md5'
 	export default {
 		data() {

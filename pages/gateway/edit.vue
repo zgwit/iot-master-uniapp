@@ -31,9 +31,9 @@
 <script>
 	import cryptoRandomString from 'crypto-random-string';
 	import {
-		HOST,
+		
 		requestAPI
-	} from '../../const';
+	} from '../../lib/request';
 	export default {
 		data() {
 			return {

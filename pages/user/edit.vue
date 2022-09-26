@@ -18,9 +18,9 @@
 
 <script>
 	import {
-		HOST,
+		
 		requestAPI
-	} from '../../const';
+	} from '../../lib/request';
 	export default {
 		data() {
 			return {

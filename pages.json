@@ -286,6 +286,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/gateway/internal",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "内置网关",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#303030",

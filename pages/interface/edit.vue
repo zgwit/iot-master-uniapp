@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { HOST, requestAPI } from '../../const';
+import {  requestAPI } from '../../lib/request';
 	export default {
 		data() {
 			return {

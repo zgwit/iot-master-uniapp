@@ -40,7 +40,7 @@
 	import dayjs from 'dayjs';
 	import {
 		requestAPI
-	} from '../../const';
+	} from '../../lib/request';
 	import {
 		dateFormat
 	} from '../../lib/time';

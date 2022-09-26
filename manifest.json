@@ -67,7 +67,7 @@
         "title" : "物联大师",
         "router" : {
             "mode" : "history",
-            "base" : "/"
+            "base" : ""
         },
         "uniStatistics" : {
             "enable" : false
