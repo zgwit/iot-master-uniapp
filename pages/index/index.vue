@@ -67,7 +67,7 @@ const apps = [
 	{
 		icon: '/static/icons/help.svg',
 		name: '帮助',
-		url: '/pages/help/help',
+		url: '/pages/manual/manual',
 		internal: true
 	},
 	{

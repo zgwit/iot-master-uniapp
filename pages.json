@@ -296,10 +296,19 @@
             }
             
         }
+        ,{
+            "path" : "pages/manual/manual",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "帮助手册",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#303030",
-		"selectedColor": "#1296db",
+		"selectedColor": "#2979FF",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
 				"pagePath": "pages/index/index",
@@ -324,7 +333,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "物联大师 开源版",
-		"navigationBarBackgroundColor": "#1296db",
+		"navigationBarBackgroundColor": "#2979FF",
 		"backgroundColor": "#ffffff"
 	}
 }
