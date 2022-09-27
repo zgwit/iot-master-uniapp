@@ -1,5 +1,13 @@
 <template>
 	<view class="container">
+		<swiper :indicator-dots="true" :autoplay="true" :interval="5000" :circular="true">
+			<swiper-item>
+				<image class="bannerImage" src="../../static/banner.jpg" mode="aspectFill"></image>
+			</swiper-item>
+			<swiper-item>
+				<image class="bannerImage" src="../../static/a.jpeg" mode="aspectFill"></image>
+			</swiper-item>
+		</swiper>
 		<uni-grid class="apps" :showBorder="false" :column="cols">
 			<uni-grid-item v-for="a in apps" @click="open(a)">
 				<view class="app">
@@ -57,6 +65,12 @@ const apps = [
 		internal: true
 	},
 	{
+		icon: '/static/icons/help.svg',
+		name: '帮助',
+		url: '/pages/help/help',
+		internal: true
+	},
+	{
 		icon: '/static/icons/setting.svg',
 		name: '设置',
 		url: '/pages/setting/setting',
@@ -105,6 +119,11 @@ export default {
 
 <style lang="scss">
 .container {
+}
+
+.bannerImage{
+	width: 100%;
+	height: 100%;
 }
 
 .apps {
