@@ -308,7 +308,7 @@
     ],
 	"tabBar": {
 		"color": "#303030",
-		"selectedColor": "#2979FF",
+		"selectedColor": "#00709E",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
 				"pagePath": "pages/index/index",
@@ -333,7 +333,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "物联大师 开源版",
-		"navigationBarBackgroundColor": "#2979FF",
+		"navigationBarBackgroundColor": "#00709E",
 		"backgroundColor": "#ffffff"
 	}
 }

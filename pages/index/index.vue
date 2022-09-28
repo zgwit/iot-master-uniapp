@@ -132,7 +132,7 @@ export default {
 
 .app {
 	width: 90%;
-	height: 80%;
+	height: 90%;
 
 	display: flex;
 	flex-direction: column;
@@ -143,12 +143,14 @@ export default {
 	color: #1296db;
 
 	image {
-		//width: 60%;
+		width: 100%;
+		height: 100%;
 		display: block;
 	}
 
 	&:hover {
 		transform: scale(1.1);
+		transition: all 0.3s;
 	}
 }
 </style>
