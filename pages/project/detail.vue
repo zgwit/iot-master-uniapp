@@ -2,11 +2,10 @@
 	<view>
 
 		<uni-card :title="data.name" :subTitle="data.id" note="Tips" thumbnail="/static/icons/project.svg">
-			<uni-list :border="false">
-				<uni-list-item title="ID" :rightText="data.id"></uni-list-item>
-				<uni-list-item title="创建时间" :rightText="format(data.created)"></uni-list-item>
-			</uni-list>
-			
+			<uni-section title="变量表 [更新时间]" type="square">
+				<uni-tag text="温度:30℃" type="success"></uni-tag>
+				<uni-tag text="湿度:90%" type="error"></uni-tag>
+			</uni-section>
 		</uni-card>
 		
 		<uni-list>
@@ -25,19 +24,12 @@
 					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-dustbin"></uni-icons>
 				</template>
 			</uni-list-item>
+			<uni-list-item title="收藏到首页">
+				<template v-slot:header>
+					<uni-icons class="list-icon" customPrefix="iconfont" type="icon-collect"></uni-icons>
+				</template>
+			</uni-list-item>
 		</uni-list>
-		
-		<uni-section title="变量" type="line">
-			<uni-grid :column="3">
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-				<uni-grid-item>温度：30</uni-grid-item>
-			</uni-grid>
-		</uni-section>
 		
 		<uni-section title="日志" type="line">
 			TODO：Event

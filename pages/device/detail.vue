@@ -3,11 +3,12 @@
 
 		<uni-card :title="data.name" :subTitle="data.id" extra="在线" note="Tips" thumbnail="/static/icons/device.svg">
 			<uni-list :border="false">
-				<uni-list-item title="ID" :rightText="data.id"></uni-list-item>
-				<uni-list-item title="网关" :rightText="data.gateway_id"></uni-list-item>
-				<uni-list-item title="创建时间" :rightText="format(data.created)"></uni-list-item>
+				<uni-list-item title="网关" :rightText="data.gateway_id || '无'"></uni-list-item>
 			</uni-list>
-			
+			<uni-section title="变量表 [更新时间]" type="square">
+				<uni-tag text="温度:30℃" type="success"></uni-tag>
+				<uni-tag text="湿度:90%" type="error"></uni-tag>
+			</uni-section>
 		</uni-card>
 		
 		<uni-list>

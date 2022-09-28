@@ -8,14 +8,24 @@
 				<image class="bannerImage" src="../../static/a.jpeg" mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
-		<uni-grid class="apps" :showBorder="false" :column="cols">
-			<uni-grid-item v-for="a in apps" @click="open(a)">
-				<view class="app">
-					<image :src="a.icon" mode="aspectFit"></image>
-					<text>{{ a.name }}</text>
-				</view>
-			</uni-grid-item>
-		</uni-grid>
+		<uni-section title="我的项目" type="line">
+			<uni-card title="1号养殖场" extra="正常">
+				TODO：组态可视化
+			</uni-card>
+			<uni-card title="2号养殖场" extra="正常">
+				TODO：组态可视化
+			</uni-card>
+		</uni-section>
+		<uni-section title="常用功能" type="line">
+			<uni-grid class="apps" :showBorder="false" :column="cols">
+				<uni-grid-item v-for="a in apps" @click="open(a)">
+					<view class="app">
+						<image :src="a.icon" mode="aspectFit"></image>
+						<text>{{ a.name }}</text>
+					</view>
+				</uni-grid-item>
+			</uni-grid>
+		</uni-section>
 	</view>
 </template>
 
