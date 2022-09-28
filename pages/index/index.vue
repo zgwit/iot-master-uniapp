@@ -23,55 +23,55 @@
 //console.log(uni.getWindowInfo().windowWidth)
 const apps = [
 	{
-		icon: '/static/icons/router.svg',
+		icon: '/static/icons/gateway.png',
 		name: '网关',
 		url: '/pages/gateway/gateway',
 		internal: true
 	},
 	{
-		icon: '/static/icons/device.svg',
+		icon: '/static/icons/device.png',
 		name: '设备',
 		url: '/pages/device/device',
 		internal: true
 	},
 	{
-		icon: '/static/icons/project.svg',
+		icon: '/static/icons/project.png',
 		name: '项目',
 		url: '/pages/project/project',
 		internal: true
 	},
 	{
-		icon: '/static/icons/design.svg',
+		icon: '/static/icons/design.png',
 		name: '组态',
 		url: '/pages/interface/interface',
 		internal: true
 	},
 	{
-		icon: '/static/icons/plugin.svg',
+		icon: '/static/icons/plugin.png',
 		name: '插件',
 		url: '/pages/plugin/plugin',
 		internal: true
 	},
 	{
-		icon: '/static/icons/product.svg',
+		icon: '/static/icons/product.png',
 		name: '产品',
 		url: '/pages/product/product',
 		internal: true
 	},
 	{
-		icon: '/static/icons/group.svg',
+		icon: '/static/icons/group.png',
 		name: '用户',
 		url: '/pages/user/user',
 		internal: true
 	},
 	{
-		icon: '/static/icons/help.svg',
+		icon: '/static/icons/manual.png',
 		name: '帮助',
 		url: '/pages/manual/manual',
 		internal: true
 	},
 	{
-		icon: '/static/icons/setting.svg',
+		icon: '/static/icons/setting.png',
 		name: '设置',
 		url: '/pages/setting/setting',
 		internal: true
@@ -143,7 +143,7 @@ export default {
 	color: #1296db;
 
 	image {
-		width: 60%;
+		//width: 60%;
 		display: block;
 	}
 
